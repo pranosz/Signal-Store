@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
+import { PagesStore } from '../pages.store';
+import { getState } from '@ngrx/signals';
 
 @Component({
   selector: 'app-page-2',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-2.component.scss']
 })
 export class Page2Component {
+  readonly store = inject(PagesStore);
 
+  constructor() {
+    effect(() => {
+      const state = getState(this.store);
+      console.log('Pages state changed', state);
+    });
+  }
+
+  onClick(){
+    this.store.updateName('new name pages 2');
+  }
 }
