@@ -7,7 +7,7 @@ type PagesState = {
 };
 
 const initialState: PagesState = {
-  name: '',
+  name: '3333333',
   isLoading: false,
   type: 'retro',
 };

@@ -3,9 +3,10 @@ import { PagesStore } from '../pages.store';
 import { getState } from '@ngrx/signals';
 
 @Component({
-  selector: 'app-page-1',
-  templateUrl: './page-1.component.html',
-  styleUrls: ['./page-1.component.scss']
+    selector: 'app-page-1',
+    templateUrl: './page-1.component.html',
+    styleUrls: ['./page-1.component.scss'],
+    standalone: true
 })
 export class Page1Component {
   readonly store = inject(PagesStore);
